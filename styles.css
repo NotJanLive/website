@@ -1,0 +1,89 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.intro, .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.intro .container, .details .container {
+    padding: 2rem;
+}
+
+p {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+#adjective {
+    color: #a101a1;
+    text-shadow: 0 0 10px #a101a1, 0 0 20px #a101a1, 0 0 30px #a101a1;
+}
+
+.cursor {
+    color: #FFFFFF;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+.scroll-down .arrow {
+    font-size: 3rem;
+    color: #a101a1;
+    text-shadow: 0 0 10px #a101a1, 0 0 20px #a101a1, 0 0 30px #a101a1;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.scroll-down .arrow:hover {
+    transform: translateY(10px);
+}
+
+.scroll-button { 
+    text-decoration: none; 
+}
+
+.details {
+    background-color: #121212;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a {
+    color: #a101a1;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #a101a1, 0 0 20px #a101a1, 0 0 30px #a101a1;
+}
+
+.social-links p {
+    font-size: 1.25rem;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
