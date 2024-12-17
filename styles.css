@@ -279,6 +279,19 @@ p {
     margin-bottom: 2rem;
 }
 
+.search-bar {
+    width: 50%;
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #4a4a4a;
+    background-color: #2c2c2c;
+    color: #FFFFFF;
+    font-size: 1rem;
+    text-align: center;
+}
+
 .project-list {
     display: flex;
     justify-content: center;
@@ -291,10 +304,18 @@ p {
     margin: 1rem;
     border-radius: 10px;
     width: calc(33% - 2rem);
+    text-align: center;
 }
 
 .project-item h3 {
     font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
     margin-bottom: 1rem;
 }
 
@@ -303,14 +324,46 @@ p {
     margin-bottom: 1rem;
 }
 
-.project-item a {
-    color: #a101a1;
-    text-decoration: none;
-    font-weight: bold;
+.tags {
+    margin: 1rem 0;
 }
 
-.project-item a:hover {
-    text-decoration: underline;
+.tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.875rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tag:hover {
+    background-color: #2c2c2c;
+    border-color: #5a5a5a;
+}
+
+.more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.more-button:hover {
+    background-color: #2c2c2c;
+    border-color: #5a5a5a;
 }
 
 .about p, .contact p {
@@ -321,4 +374,188 @@ p {
     50% {
         opacity: 0;
     }
+}
+
+#project-search {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 60%; /* Adjust width as needed */
+    max-width: 400px;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    background-color: #2c2c2c;
+    color: #FFFFFF;
+}
+
+.explore-more-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 1rem auto;
+    padding: 0.5rem 2rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.explore-more-button i {
+    font-size: 1rem;
+}
+
+.explore-more-button:hover {
+    background-color: #2c2c2c;
+    border-color: #5a5a5a;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #333333;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.all-projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for project items in the popup */
+.popup .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    border-bottom: 1px solid #4a4a4a;
+    margin-bottom: 0.5rem;
+}
+
+.popup .project-item h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.popup .project-item .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.popup .project-item .more-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: #a101a1;
+    color: #FFFFFF;
+    border: 2px solid #a101a1;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.popup .project-item .more-button i {
+    font-size: 0.875rem;
+}
+
+.popup .project-item .more-button:hover {
+    background-color: #870087;
+    border-color: #870087;
+}
+
+.tags .tag {
+    background-color: #4a4a4a;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+/* Styles for project boxes on the main page */
+.project-item {
+    background-color: #333333;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: calc(33% - 2rem);
+    text-align: center;
+}
+
+.project-item h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project-item p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    margin: 1rem 0;
+}
+
+.more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.more-button:hover {
+    background-color: #2c2c2c;
+    border-color: #5a5a5a;
 }
