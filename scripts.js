@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loopAdjectives();
 
-    // Smooth scrolling
+    // Smooth scrolling for buttons
     document.querySelectorAll('.scroll-button, .cta-button').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -55,7 +55,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Apply pulsating effect to the word "life"
-    const lifeElement = document.getElementById('life');
-    lifeElement.classList.add('pulsating');
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Toggle dropdown menu
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    navbarToggle.addEventListener('click', function() {
+        dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navbarToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('active');
+            navbarToggle.classList.remove('active');
+        }
+    });
 });
