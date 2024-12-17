@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const adjectives = ["simplicity", "elegance", "power", "creativity", "goal", "mystery", "innovation"];
     let index = 0;
     const adjectiveElement = document.getElementById("adjective");
-    const typingSpeed = 100; // milliseconds
-    const pauseDuration = 2000; // milliseconds
-
+    const typingSpeed = 100;
+    const pauseDuration = 2000;
     function typeAdjective(text, callback) {
         let charIndex = 0;
         function type() {
@@ -102,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
             favorite: true,
             link: "#"
         },
-        // Add more projects here
     ];
 
     const searchInput = document.getElementById("project-search");

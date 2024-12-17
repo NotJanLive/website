@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #1a1a1a; /* Lighter black filling for the navbar */
+    background-color: #1a1a1a;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
@@ -37,8 +37,8 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-grow: 1; /* Allow nav items to grow */
-    justify-content: center; /* Center the nav items */
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .navbar-nav li {
@@ -65,7 +65,7 @@ header {
 .navbar-right {
     display: flex;
     align-items: center;
-    margin-right: 2rem; /* Align to the right */
+    margin-right: 2rem;
 }
 
 .donate-button {
@@ -85,7 +85,7 @@ header {
 .navbar-toggle {
     display: none;
     cursor: pointer;
-    margin-left: 1rem; /* Adjusted to move the icon to the left */
+    margin-left: 1rem;
 }
 
 .navbar-toggle i {
@@ -96,15 +96,15 @@ header {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 60px; /* Position below the navbar */
-    right: 1rem; /* Align to the right side */
-    background-color: #1a1a1a; /* Lighter black filling for the dropdown menu */
+    top: 60px;
+    right: 1rem;
+    background-color: #1a1a1a;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    width: 200px; /* Set a fixed width for the dropdown menu */
-    border: none; /* Remove the border */
-    z-index: 1001; /* Ensure dropdown is above other elements */
-    border-radius: 5px; /* Add rounded corners */
+    width: 200px;
+    border: none;
+    z-index: 1001;
+    border-radius: 5px;
 }
 
 .dropdown-menu ul {
@@ -144,8 +144,8 @@ header {
     }
 
     .dropdown-menu {
-        width: 200px; /* Ensure the dropdown menu takes the fixed width */
-        right: 1rem; /* Align the dropdown menu to the right side */
+        width: 200px;
+        right: 1rem;
     }
 
     .navbar-toggle.active + .dropdown-menu {
@@ -208,7 +208,7 @@ p {
 }
 
 .pulsating {
-    animation: heartbeat 2s infinite;
+    animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
@@ -380,7 +380,7 @@ p {
     display: block;
     margin: 1rem auto;
     padding: 0.5rem;
-    width: 60%; /* Adjust width as needed */
+    width: 60%;
     max-width: 400px;
     border: 2px solid #4a4a4a;
     border-radius: 25px;
@@ -454,7 +454,6 @@ p {
     align-items: center;
 }
 
-/* Styles for project items in the popup */
 .popup .project-item {
     display: flex;
     align-items: center;
@@ -509,7 +508,6 @@ p {
     color: #FFFFFF;
 }
 
-/* Styles for project boxes on the main page */
 .project-item {
     background-color: #333333;
     padding: 2rem;
