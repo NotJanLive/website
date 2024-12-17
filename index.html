@@ -5,26 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notjan's Modding Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="intro">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="intro">
         <div class="container">
             <p id="quote">The beauty of code lies in its <span id="adjective"></span><span class="cursor">|</span></p>
+            <p id="description">Discover the ultimate Minecraft mods that bring your game to <span id="life">life</span></p>
+            <a href="#projects" class="cta-button"><i class="fas fa-compass"></i> Explore</a>
         </div>
         <div class="scroll-down">
-            <a href="#details" class="scroll-button">
+            <a href="#projects" class="scroll-button">
                 <span class="arrow">⌄</span>
             </a>
         </div>
-    </div>
-    <div id="details" class="details">
-        <h1>NotJan</h1>
-        <div class="social-links">
-            <a href="https://github.com/notjanlive" target="_blank">GitHub</a>
-            <p>Discord: fvde.</p>
+    </section>
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Project One</h3>
+                <p>A brief description of your first project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>Project Two</h3>
+                <p>A brief description of your second project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
         </div>
-    </div>
+    </section>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm NotJan. I'm passionate about coding and creating innovative projects. Here's a little more about me...</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me on <a href="https://github.com/notjanlive" target="_blank">GitHub</a> or via Discord: fvde.</p>
+    </section>
     <script src="scripts.js"></script>
 </body>
 </html>

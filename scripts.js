@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const adjectives = ["simplicity", "elegance", "power", "creativity", "adventure", "mystery", "innovation"];
+    const adjectives = ["simplicity", "elegance", "power", "creativity", "goal", "mystery", "innovation"];
     let index = 0;
     const adjectiveElement = document.getElementById("adjective");
     const typingSpeed = 100; // milliseconds
@@ -46,25 +46,16 @@ document.addEventListener("DOMContentLoaded", function() {
     loopAdjectives();
 
     // Smooth scrolling
-    document.querySelector('.scroll-button').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    document.querySelectorAll('.scroll-button, .cta-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-        activateAnimation();
     });
 
-    // Activate background animation on scroll
-    window.addEventListener('scroll', function() {
-        const details = document.querySelector('#details');
-        const rect = details.getBoundingClientRect();
-        if (rect.top <= window.innerHeight) {
-            activateAnimation();
-        }
-    });
-
-    function activateAnimation() {
-        const details = document.querySelector('#details');
-        details.classList.add('active');
-    }
+    // Apply pulsating effect to the word "life"
+    const lifeElement = document.getElementById('life');
+    lifeElement.classList.add('pulsating');
 });

@@ -1,14 +1,71 @@
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
-    background-color: #121212;
+    background-color: #121212;  /* Change back to black */
     color: #FFFFFF;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-.intro, .details {
+header {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #a101a1;  /* Underline color */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #a101a1;  /* Change text color on hover */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,10 +73,25 @@ body {
     height: 100vh;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.intro .container, .details .container {
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/coding_bg.png') no-repeat center center fixed; /* Update the path and filename of your image */
+    background-size: cover;
+    filter: blur(8px); /* Apply blur to the background image */
+    z-index: -1;
+}
+
+.intro .container {
     padding: 2rem;
+    /* Remove background and border-radius to remove the black box */
 }
 
 p {
@@ -32,9 +104,60 @@ p {
     text-shadow: 0 0 10px #a101a1, 0 0 20px #a101a1, 0 0 30px #a101a1;
 }
 
+#description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
 .cursor {
     color: #FFFFFF;
     animation: blink 0.7s steps(1) infinite;
+}
+
+#life {
+    color: #ff6961;  /* Soft clean red */
+    display: inline-block; /* Ensure it scales properly */
+    transform-origin: center; /* Scale from the center */
+}
+
+.pulsating {
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    10%, 30% {
+        transform: scale(1.25); /* Enlarged size */
+    }
+    20%, 40% {
+        transform: scale(1); /* Normal size */
+    }
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: 2px solid #4a4a4a; /* Lighter black border */
+    border-radius: 25px; /* Rounded border */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cta-button i {
+    font-size: 1.25rem; /* Adjust icon size */
+}
+
+.cta-button:hover {
+    background-color: #2c2c2c; /* Slightly lighter black */
+    border-color: #5a5a5a; /* Lighten the border slightly more on hover */
 }
 
 .scroll-down {
@@ -59,26 +182,51 @@ p {
     text-decoration: none; 
 }
 
-.details {
-    background-color: #121212;
-    position: relative;
-    overflow: hidden;
+.projects, .about, .contact {
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
-.social-links a {
+.projects h2, .about h2, .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background-color: #333333;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: calc(33% - 2rem);
+}
+
+.project-item h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.project-item p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.project-item a {
     color: #a101a1;
     text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    font-weight: bold;
 }
 
-.social-links a:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 10px #a101a1, 0 0 20px #a101a1, 0 0 30px #a101a1;
+.project-item a:hover {
+    text-decoration: underline;
 }
 
-.social-links p {
+.about p, .contact p {
     font-size: 1.25rem;
 }
 
