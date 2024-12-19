@@ -1,0 +1,31 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: Clone repository
+  image: alpine/git
+  commands:
+  - git clone https://github.com/NotJanLive/website.git
+  
+- name: Upload files
+  image: appleboy/drone-scp
+  settings:
+    host:
+      from_secret: address
+    username: root
+    password:
+      from_secret: ssh_password
+    source: website/*
+    target: /var/lib/docker/volumes/35ca265ae8d3ed52de01b1cf0f615b1a3325e18b2af8bca3c6e6b88d5ba5e986/_data/
+    
+- name: Restart nginx
+  image: alpine
+  settings:
+    host:
+      from_secret: address
+    username: root
+    password:
+      from_secret: ssh_password
+    commands:
+    - docker restart website
