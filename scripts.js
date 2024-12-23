@@ -57,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Add event listener for GitHub button
+    document.querySelector('.cta-button[href="https://github.com/notjanlive"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(this.getAttribute('href'), '_blank');
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {

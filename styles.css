@@ -236,6 +236,7 @@ p {
     border: 2px solid #4a4a4a;
     border-radius: 25px;
     transition: background-color 0.3s, border-color 0.3s;
+    font-weight: normal;
 }
 
 .cta-button i {
@@ -245,6 +246,12 @@ p {
 .cta-button:hover {
     background-color: #2c2c2c;
     border-color: #5a5a5a;
+    text-decoration: none;
+}
+
+.cta-button:visited {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .scroll-down {
@@ -556,4 +563,134 @@ p {
 .more-button:hover {
     background-color: #2c2c2c;
     border-color: #5a5a5a;
+}
+
+.section-header {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-header .line {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #a101a1;
+}
+
+.section-divider {
+    width: 80%;
+    margin: 2rem auto;
+    border: 0;
+    height: 1px;
+    background: #4a4a4a;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: 2px solid #4a4a4a;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.contact-button i {
+    font-size: 1.25rem;
+}
+
+.contact-button:hover {
+    background-color: #2c2c2c;
+    border-color: #5a5a5a;
+    text-decoration: none;
+}
+
+.contact-button:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.about-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.vertical-divider {
+    width: 1px;
+    background: #4a4a4a;
+    margin: 0 2rem;
+    align-self: stretch;
+}
+
+.about, .contact {
+    flex: 1;
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.about .about-card, .contact .contact-card {
+    background-color: #2c2c2c;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 1rem 0;
+}
+
+.about .about-card p, .contact .contact-card p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+.contact a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.contact a:hover {
+    text-decoration: none;
+}
+
+.section-header {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-header .line {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #a101a1;
+}
+
+@media (max-width: 768px) {
+    .about-contact {
+        flex-direction: column;
+    }
+
+    .about, .contact {
+        margin: 1rem 0;
+    }
 }
