@@ -92,20 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Search functionality for projects
     const projects = [
         {
-            title: "Project One",
-            img: "path/to/your/image1.jpg",
-            description: "A brief description of your first project.",
-            tags: ["Fabric", "1.21.1"],
+            title: "ItemBattle",
+            img: "/img/itembattle_title.png",
+            description: "Battle yourself against your friends while collecting randomly picked items!",
+            tags: ["Spigot/Paper", "1.18.2"],
             favorite: true,
-            link: "#"
-        },
-        {
-            title: "Project Two",
-            img: "path/to/your/image2.jpg",
-            description: "A brief description of your second project.",
-            tags: ["Forge", "1.20"],
-            favorite: true,
-            link: "#"
+            link: "https://github.com/NotJanLive/ItemBattle"
         },
     ];
 

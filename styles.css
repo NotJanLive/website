@@ -694,3 +694,28 @@ p {
         margin: 1rem 0;
     }
 }
+
+footer {
+    background-color: #6a0dad;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer a {
+    color: #a101a1;
+    text-decoration: none;
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
