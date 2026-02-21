@@ -8,6 +8,10 @@ steps:
     commands:
       - npm install
       - npm run build
+      # Next.js standalone needs these folders to be copied manually to the standalone folder
+      - cp -rv public .next/standalone/
+      - mkdir -p .next/standalone/.next/static
+      - cp -rv .next/static/* .next/standalone/.next/static/
 
   - name: Upload
     image: appleboy/drone-scp
@@ -17,13 +21,10 @@ steps:
       username: root
       password:
         from_secret: ssh_password
-      source: 
-        - .next/standalone
-        - .next/static
-        - public
-      # Pointing to the specific volume's data directory
+      # We only need to upload the prepared standalone folder now
+      source: .next/standalone
       target: /var/lib/docker/volumes/website/_data
-      strip_components: 0
+      strip_components: 2 # This removes ".next/standalone" from the path so files go directly into _data
 
   - name: Deploy
     image: appleboy/drone-ssh
@@ -43,5 +44,5 @@ steps:
             -p 880:3000 \
             -p 7443:3000 \
             -v website:/app \
-            -w /app/.next/standalone \
+            -w /app \
             node:20-alpine node server.js
