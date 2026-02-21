@@ -1,0 +1,51 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: Build
+    image: node:20
+    commands:
+      - npm install
+      - npm run build
+
+  - name: Upload
+    image: appleboy/drone-scp
+    settings:
+      host:
+        from_secret: address
+      username: root
+      password:
+        from_secret: ssh_password
+      # Using standalone output is much more efficient
+      source: 
+        - .next/standalone
+        - .next/static
+        - public
+      target: /var/lib/docker/volumes/5f995d953cff72da3196a71bd6f5282cfeba6826bf2f572aa4f943937341c2c4/data
+      strip_components: 0
+
+  - name: Deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: address
+      username: root
+      password:
+        from_secret: ssh_password
+      script:
+        # We navigate to the volume data, stop the old container, and start a new one with the correct ports
+        # Note: 7443 for HTTPS usually requires an SSL certificate handled by a proxy (like Nginx).
+        # Here we map both host ports to the container's internal port (3000).
+        - cd /var/lib/docker/volumes/5f995d953cff72da3196a71bd6f5282cfeba6826bf2f572aa4f943937341c2c4/data
+        - docker stop website || true
+        - docker rm website || true
+        - |
+          docker run -d \
+            --name website \
+            --restart always \
+            -p 880:3000 \
+            -p 7443:3000 \
+            -v 5f995d953cff72da3196a71bd6f5282cfeba6826bf2f572aa4f943937341c2c4/data:/app \
+            -w /app/.next/standalone \
+            node:20-alpine node server.js
